@@ -7,6 +7,11 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import reducers from './reducers/index.js';
 
+let http = require("http");
+setInterval(function() {
+    http.get("https://<your app name>.herokuapp.com");
+}, 300000); // every 5 minutes (300000)
+
 ReactDOM.render(<Provider store={createStore(reducers)}>
 				  <App/>
 				</Provider>,
